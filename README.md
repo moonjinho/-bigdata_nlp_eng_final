@@ -3,20 +3,18 @@
 
 - 소스 실행 순서
 
-1. git 소스에 있는 ratings_train.txt - 학습용 / ratings_test.txt - 테스트용 파일 준비
+1. git 소스에 있는 friends_train.json / friends_test.json / friends_dev.json 준비
 2. 필요한 라이브러리 import 및 데이터 가져오기
-3. 훈련용 데이터 전처리
-4. 테스트용 데이터 전처리
-5. 정수 인코딩
-6. 단어 분포 확인 후, 3회 미만으로 사용된 단어들은 제거
-7. 토크나이징
-8. label 값들 저장 후, 빈 샘플들 제거
-9. 서로 다른 길이의 샘플들의 길이를 동일하게 작업 (패딩)
-10. 단어 샘플들의 분포 비율 확인 후, max_len 30으로 설정
-11. LSTM으로 리뷰 감성 분류 시작
-12. 가장 좋은 모델을 기준으로 테스트 데이터 정확도 측정 (기준 val_acc)
-13. Kaggle Sample 데이터를 통한 결과 분류 시작
-14. sample.csv 파일로 export
+3. json 데이터 가져오기
+4. 트레이닝용 데이터 생성
+5. 품사 태깅
+6. 카운팅 끝난 후, 임베딩
+7. 트레이닝 데이터의 emotion value를 모두 숫자로 변환
+8. X,Y 에 최종적인 train data와 train label 투입 후, 모델 생성
+9. LSTM으로 리뷰 감성 분류 시작
+10. 가장 좋은 모델을 기준으로 테스트 데이터 정확도 측정 (기준 val_accuracy)
+11. Kaggle Sample 데이터를 통한 결과 분류 시작 (data.csv)
+12. sample.csv 파일로 export
 
 - 참고한 오픈 소스
 
